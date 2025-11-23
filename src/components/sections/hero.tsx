@@ -14,9 +14,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative z-10">
             <h1 className="font-headline text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-4">
-              Gangireddy
-              <br />
-              Rajasekhar Reddy
+              Gangireddy Rajasekhar Reddy
             </h1>
             <p className="text-primary font-bold mb-6 text-2xl sm:text-3xl font-headline">
               Full stack developer
@@ -38,14 +36,6 @@ export function HeroSection() {
                  </a>
               </Button>
             </div>
-             <div className="flex items-center gap-4 mt-8">
-                <Link href="https://www.linkedin.com/in/gangireddy-rajasekhar-reddy-405a82216" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground transition-colors hover:text-primary">
-                    <Linkedin className="h-7 w-7" />
-                </Link>
-                <Link href="mailto:rajasekharreddy681@gmail.com" aria-label="Email" className="text-muted-foreground transition-colors hover:text-primary">
-                    <Mail className="h-7 w-7" />
-                </Link>
-             </div>
           </div>
           <div className="flex justify-center items-center">
              <div className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-primary/50">
