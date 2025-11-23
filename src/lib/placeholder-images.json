@@ -8,15 +8,15 @@
     },
     {
       "id": "project-1",
-      "description": "A sleek e-commerce platform.",
-      "imageUrl": "https://images.unsplash.com/photo-1658297063569-162817482fb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlfGVufDB8fHx8MTc2MzgyMzE3MHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "ecommerce website"
+      "description": "Abstract 3D render with spheres",
+      "imageUrl": "https://images.unsplash.com/photo-1761058239636-2392c0cbc25e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMHNwaGVyZXN8ZW58MHx8fHwxNzYzODY4MTU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract spheres"
     },
     {
       "id": "project-2",
-      "description": "A data visualization dashboard.",
-      "imageUrl": "https://images.unsplash.com/photo-1748609278627-4b0e483b9b70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkYXNoYm9hcmQlMjBhbmFseXRpY3N8ZW58MHx8fHwxNzYzODMwMTQ4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "dashboard analytics"
+      "description": "Metallic woven texture",
+      "imageUrl": "https://images.unsplash.com/photo-1656055448548-e26753307fc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtZXRhbCUyMHRleHR1cmV8ZW58MHx8fHwxNzYzODY4MTU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "metal texture"
     },
     {
       "id": "project-3",
