@@ -39,13 +39,16 @@ export function HeroSection() {
           </div>
           <div className="flex justify-center items-center">
              <div className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-primary/50">
-              <Image
-                src="/my-portfolio.png"
-                alt="Gangireddy Rajasekhar Reddy"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 80vw, 33vw"
-              />
+              {profileImage && (
+                <Image
+                  src={profileImage.imageUrl}
+                  alt={profileImage.description}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 80vw, 33vw"
+                  data-ai-hint={profileImage.imageHint}
+                />
+              )}
             </div>
           </div>
         </div>
