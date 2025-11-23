@@ -60,80 +60,79 @@ export function WorkSection() {
           </p>
         </div>
         
-        <div 
-          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
-        >
-          {projectsData.map((project) => {
-            const image = projectImages.find(p => p.id === project.id);
-            if (!image) return null;
-            const isExpanded = expandedProject === project.id;
+        <div onMouseLeave={() => setExpandedProject(null)} className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projectsData.map((project) => {
+              const image = projectImages.find(p => p.id === project.id);
+              if (!image) return null;
+              const isExpanded = expandedProject === project.id;
 
-            return (
-              <Card 
-                key={project.id}
-                onMouseEnter={() => setExpandedProject(project.id)}
-                onMouseLeave={() => setExpandedProject(null)}
-                className={cn(
-                  "bg-card flex flex-col overflow-hidden group border-transparent transition-all duration-500 cursor-pointer",
-                  "hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-1",
-                  isExpanded ? 'md:col-span-2' : 'md:col-span-1'
-                )}
-              >
-                <div className={cn(
-                  "flex flex-col md:flex-row items-stretch transition-all duration-500",
-                   isExpanded ? 'md:flex-row' : 'md:flex-col'
-                )}>
-                   <div className={cn(
-                      "relative w-full aspect-video md:aspect-auto overflow-hidden",
-                      isExpanded ? 'md:w-1/2' : 'md:w-full md:h-64'
-                   )}>
-                    <Image
-                      src={image.imageUrl}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      data-ai-hint={image.imageHint}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
+              return (
+                <Card 
+                  key={project.id}
+                  onMouseEnter={() => setExpandedProject(project.id)}
+                  className={cn(
+                    "bg-card flex flex-col overflow-hidden group border-transparent transition-all duration-500 cursor-pointer",
+                    "hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-1",
+                    isExpanded ? 'md:col-span-2' : 'md:col-span-1'
+                  )}
+                >
                   <div className={cn(
-                    "flex flex-col flex-grow p-6 transition-all duration-500",
-                    isExpanded ? 'md:w-1/2' : 'w-full'
+                    "flex flex-col md:flex-row items-stretch transition-all duration-500",
+                     isExpanded ? 'md:flex-row' : 'md:flex-col'
                   )}>
-                    <CardHeader className="p-0 mb-3">
-                      <CardTitle className="font-headline text-xl text-foreground">{project.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="p-0 flex-grow">
-                      <p className={cn("text-muted-foreground transition-opacity duration-300", isExpanded ? 'opacity-0 h-0' : 'opacity-100 h-auto')}>{project.description}</p>
-                      <div className={cn("overflow-hidden transition-all duration-500", isExpanded ? "max-h-screen opacity-100" : "max-h-0 opacity-0")}>
-                        
-                        {project.technologies && (
-                          <>
-                            <h4 className="font-headline text-md font-semibold text-primary mt-4 mb-2">Technologies Used:</h4>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                              {project.technologies.map(tech => (
-                                <Badge key={tech} variant="secondary">{tech}</Badge>
+                     <div className={cn(
+                        "relative w-full aspect-video md:aspect-auto overflow-hidden",
+                        isExpanded ? 'md:w-1/2' : 'md:w-full md:h-64'
+                     )}>
+                      <Image
+                        src={image.imageUrl}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        data-ai-hint={image.imageHint}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+                    <div className={cn(
+                      "flex flex-col flex-grow p-6 transition-all duration-500",
+                      isExpanded ? 'md:w-1/2' : 'w-full'
+                    )}>
+                      <CardHeader className="p-0 mb-3">
+                        <CardTitle className="font-headline text-xl text-foreground">{project.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="p-0 flex-grow">
+                        <p className={cn("text-muted-foreground transition-opacity duration-300", isExpanded ? 'opacity-0 h-0' : 'opacity-100 h-auto')}>{project.description}</p>
+                        <div className={cn("overflow-hidden transition-all duration-500", isExpanded ? "max-h-screen opacity-100" : "max-h-0 opacity-0")}>
+                          
+                          {project.technologies && (
+                            <>
+                              <h4 className="font-headline text-md font-semibold text-primary mt-4 mb-2">Technologies Used:</h4>
+                              <div className="flex flex-wrap gap-2 mb-4">
+                                {project.technologies.map(tech => (
+                                  <Badge key={tech} variant="secondary">{tech}</Badge>
+                                ))}
+                              </div>
+                            </>
+                          )}
+                          
+                          <h4 className="font-headline text-md font-semibold text-primary mb-2">Responsibilities:</h4>
+                          <ul className="space-y-2">
+                              {project.responsibilities?.map((item, index) => (
+                                  <li key={index} className="flex items-start gap-2">
+                                      <Check className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                                      <span className="text-muted-foreground text-sm">{item}</span>
+                                  </li>
                               ))}
-                            </div>
-                          </>
-                        )}
-                        
-                        <h4 className="font-headline text-md font-semibold text-primary mb-2">Responsibilities:</h4>
-                        <ul className="space-y-2">
-                            {project.responsibilities?.map((item, index) => (
-                                <li key={index} className="flex items-start gap-2">
-                                    <Check className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                                    <span className="text-muted-foreground text-sm">{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                      </div>
-                    </CardContent>
+                          </ul>
+                        </div>
+                      </CardContent>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            );
-          })}
+                </Card>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
