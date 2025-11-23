@@ -8,41 +8,35 @@ import React from 'react';
 
 export function Header() {
   const navItems = [
-    { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Work', href: '#work' },
+    { name: 'Projects', href: '#work' },
+    { name: 'Skills', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center gap-2" aria-label="Back to homepage">
-            <Code className="h-8 w-8 text-primary" />
+            <Code className="h-6 w-6 text-primary" />
             <span className="font-headline text-xl font-bold text-foreground">
-              Gangireddy R.
+              Gangireddy Rajasekhar Reddy
             </span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
-            <ul className="flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-8">
+            <ul className="flex items-center gap-8">
               {navItems.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="font-medium text-muted-foreground transition-colors hover:text-foreground"
+                    className="font-medium text-lg text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
-            <Button asChild>
-              <a href="/Gangireddy-Rajasekhar-Reddy-Resume.pdf" download="Gangireddy-Rajasekhar-Reddy-Resume.pdf">
-                <Download className="mr-2 h-4 w-4" />
-                Resume
-              </a>
-            </Button>
           </nav>
           <div className="md:hidden">
             <Sheet>
@@ -56,7 +50,7 @@ export function Header() {
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-start p-4 border-b">
                      <Link href="/" className="flex items-center gap-2">
-                        <Code className="h-8 w-8 text-primary" />
+                        <Code className="h-6 w-6 text-primary" />
                         <span className="font-headline text-xl font-bold text-foreground">
                           Gangireddy R.
                         </span>
@@ -78,14 +72,6 @@ export function Header() {
                       ))}
                     </ul>
                   </nav>
-                  <div className="p-4 border-t">
-                    <Button asChild className="w-full">
-                       <a href="/Gangireddy-Rajasekhar-Reddy-Resume.pdf" download="Gangireddy-Rajasekhar-Reddy-Resume.pdf">
-                         <Download className="mr-2 h-4 w-4" />
-                         Download Resume
-                       </a>
-                    </Button>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>

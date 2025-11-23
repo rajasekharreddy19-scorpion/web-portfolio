@@ -1,6 +1,5 @@
 
 import { Briefcase } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 const experienceData = [
   {
@@ -13,31 +12,33 @@ const experienceData = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-24 sm:py-32">
+    <section id="experience" className="py-24 sm:py-32 bg-secondary/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-headline font-bold text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl font-headline font-bold text-center mb-16 text-primary">
           Work Experience
         </h2>
-        <div className="relative max-w-3xl mx-auto">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-border"></div>
+        <div className="relative max-w-3xl mx-auto before:absolute before:inset-y-0 before:w-0.5 before:bg-border before:left-1/2 before:-translate-x-1/2">
           {experienceData.map((exp, index) => (
-            <div key={index} className="mb-12 flex items-center w-full">
-              <div className="w-1/2 pr-8 text-right">
-                <p className="text-muted-foreground text-sm">{exp.period}</p>
-              </div>
-              <div className="z-10 bg-primary rounded-full p-2 text-primary-foreground">
-                <Briefcase className="h-6 w-6" />
-              </div>
-              <div className="w-1/2 pl-8">
-                <Card className="bg-card">
-                  <CardHeader>
-                    <CardTitle className="font-headline text-xl">{exp.role}</CardTitle>
-                    <p className="text-muted-foreground font-medium">{exp.company}</p>
-                  </CardHeader>
-                  <CardContent>
+            <div key={index} className="relative mb-12 flex justify-between items-center w-full">
+              {/* Left side */}
+              <div className="w-1/2 pr-12 text-right">
+                 <div className="bg-card border-l-4 border-primary p-6 rounded-lg shadow-lg">
+                    <h3 className="font-headline text-xl font-bold">{exp.role}</h3>
+                    <p className="text-muted-foreground font-medium mb-2">{exp.company}</p>
                     <p className="text-muted-foreground text-sm">{exp.description}</p>
-                  </CardContent>
-                </Card>
+                </div>
+              </div>
+
+              {/* Icon in the middle */}
+              <div className="z-10 absolute left-1/2 -translate-x-1/2">
+                <div className="bg-primary rounded-full p-2 text-primary-foreground">
+                    <Briefcase className="h-6 w-6" />
+                </div>
+              </div>
+
+              {/* Right side */}
+              <div className="w-1/2 pl-12">
+                 <p className="text-muted-foreground text-lg font-semibold">{exp.period}</p>
               </div>
             </div>
           ))}

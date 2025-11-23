@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Send, CheckCircle, Phone } from 'lucide-react';
+import { Send, CheckCircle, Phone, Mail, Linkedin } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import Link from 'next/link';
 
@@ -45,25 +45,36 @@ export function ContactSection() {
   }, [state, toast]);
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-secondary/20">
+    <section id="contact" className="py-24 sm:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-headline font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl font-headline font-bold mb-4 text-primary">
             Get In Touch
           </h2>
-          <p className="text-muted-foreground text-lg mb-2">
+          <p className="text-muted-foreground text-lg mb-8">
             Have a project in mind, want to collaborate, or just want to say hi?
             <br />
-            Send me a message or email me at{" "}
-            <a href="mailto:rajasekharreddy681@gmail.com" className="text-primary hover:underline font-medium">
-              rajasekharreddy681@gmail.com
-            </a>.
+            My inbox is always open.
           </p>
-          <div className="flex justify-center items-center gap-2 text-muted-foreground text-lg mb-8">
-            <Phone className="h-5 w-5" /> 
-            <a href="tel:+918121800854" className="text-primary hover:underline font-medium">
-              +91 8121800854
-            </a>
+           <div className="flex justify-center flex-wrap items-center gap-6 text-muted-foreground text-lg mb-12">
+            <div className="flex items-center gap-2">
+                <Mail className="h-5 w-5 text-primary" /> 
+                <a href="mailto:rajasekharreddy681@gmail.com" className="hover:text-primary font-medium">
+                  rajasekharreddy681@gmail.com
+                </a>
+            </div>
+            <div className="flex items-center gap-2">
+                <Phone className="h-5 w-5 text-primary" /> 
+                <a href="tel:+918121800854" className="hover:text-primary font-medium">
+                  +91 8121800854
+                </a>
+            </div>
+             <div className="flex items-center gap-2">
+                <Linkedin className="h-5 w-5 text-primary" /> 
+                <a href="https://www.linkedin.com/in/gangireddy-rajasekhar-reddy-405a82216" target="_blank" rel="noopener noreferrer" className="hover:text-primary font-medium">
+                  LinkedIn
+                </a>
+            </div>
           </div>
         </div>
 
@@ -78,17 +89,17 @@ export function ContactSection() {
           ) : (
             <form ref={formRef} action={formAction} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="name" className="sr-only">Name</Label>
                 <Input id="name" name="name" type="text" placeholder="Your Name" required aria-describedby="name-error" />
                 {state.errors?.name && <p id="name-error" className="text-sm text-destructive mt-1">{state.errors.name[0]}</p>}
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="sr-only">Email</Label>
                 <Input id="email" name="email" type="email" placeholder="your.email@example.com" required aria-describedby="email-error" />
                  {state.errors?.email && <p id="email-error" className="text-sm text-destructive mt-1">{state.errors.email[0]}</p>}
               </div>
               <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
+                <Label htmlFor="message" className="sr-only">Message</Label>
                 <Textarea id="message" name="message" placeholder="Your message..." rows={5} required aria-describedby="message-error" />
                  {state.errors?.message && <p id="message-error" className="text-sm text-destructive mt-1">{state.errors.message[0]}</p>}
               </div>

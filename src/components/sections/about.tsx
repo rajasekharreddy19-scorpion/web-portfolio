@@ -1,5 +1,4 @@
 
-import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 
 export function AboutSection() {
@@ -10,45 +9,23 @@ export function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-24 sm:py-32 bg-secondary/20">
+    <section id="about" className="py-24 sm:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-headline font-bold text-center mb-12">
-          About Me
+        <h2 className="text-3xl sm:text-4xl font-headline font-bold text-center mb-12 text-primary">
+          My Skills
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-          <div className="lg:col-span-1 flex justify-center">
-            <div className="relative w-64 h-64 rounded-full overflow-hidden shadow-2xl border-4 border-primary">
-              <Image
-                src="/my-portfolio.png"
-                alt="Gangireddy Rajasekhar Reddy"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 33vw"
-              />
-            </div>
-          </div>
-          <div className="lg:col-span-2 space-y-8">
-            <div>
-              <h3 className="text-2xl font-headline font-semibold mb-4 text-primary">Who I Am</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Full Stack Developer with around 2 years of experience building scalable web applications using .NET Core, Angular, and SQL. Skilled in backend, frontend, and API integrations, I enjoy debugging, collaborating with teams, and delivering clean, maintainable code. Based in Narasaraopet, I’m passionate about learning new technologies and solving real-world problems.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-headline font-semibold mb-4 text-primary">My Skills</h3>
-              <div className="space-y-4">
-                {Object.entries(skills).map(([category, skillList]) => (
-                  <div key={category}>
-                    <h4 className="font-semibold text-lg mb-2">{category}</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {skillList.map(skill => (
-                        <Badge key={skill} variant="secondary" className="text-sm">{skill}</Badge>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-8">
+            {Object.entries(skills).map(([category, skillList]) => (
+              <div key={category}>
+                <h3 className="font-headline font-semibold text-2xl mb-4 text-center sm:text-left">{category}</h3>
+                <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
+                  {skillList.map(skill => (
+                    <Badge key={skill} variant="secondary" className="text-md px-4 py-2">{skill}</Badge>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
