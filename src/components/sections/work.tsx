@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Github, ExternalLink, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
+import { Badge } from '../ui/badge';
 
 const projectsData = [
   {
@@ -24,6 +25,7 @@ const projectsData = [
       "Identified root causes, documented fixes, and suggested improvements for system stability.",
       "Followed Git workflows using feature branches, pull requests, and code reviews.",
     ],
+    technologies: [".NET Core", "C#", "SQL Server", "Angular", "JavaScript", "RESTful APIs", "Git"],
     liveUrl: "#",
     githubUrl: "#",
   },
@@ -36,6 +38,7 @@ const projectsData = [
         "Implemented secure login, CRUD operations, and JSON-based data handling.",
         "Designed REST APIs and integrated them with the UI for dynamic data loading."
     ],
+    technologies: ["ASP.NET Core", "Angular", "JavaScript", "HTML/CSS", "SQL Server"],
     liveUrl: "#",
     githubUrl: "#",
   }
@@ -104,7 +107,19 @@ export function WorkSection() {
                     <CardContent className="p-0 flex-grow">
                       <p className={cn("text-muted-foreground transition-opacity duration-300", isExpanded ? 'opacity-0 h-0' : 'opacity-100 h-auto')}>{project.description}</p>
                       <div className={cn("overflow-hidden transition-all duration-500", isExpanded ? "max-h-screen opacity-100" : "max-h-0 opacity-0")}>
-                        <h4 className="font-headline text-md font-semibold text-primary mt-4 mb-2">Responsibilities:</h4>
+                        
+                        {project.technologies && (
+                          <>
+                            <h4 className="font-headline text-md font-semibold text-primary mt-4 mb-2">Technologies Used:</h4>
+                            <div className="flex flex-wrap gap-2 mb-4">
+                              {project.technologies.map(tech => (
+                                <Badge key={tech} variant="secondary">{tech}</Badge>
+                              ))}
+                            </div>
+                          </>
+                        )}
+                        
+                        <h4 className="font-headline text-md font-semibold text-primary mb-2">Responsibilities:</h4>
                         <ul className="space-y-2">
                             {project.responsibilities?.map((item, index) => (
                                 <li key={index} className="flex items-start gap-2">

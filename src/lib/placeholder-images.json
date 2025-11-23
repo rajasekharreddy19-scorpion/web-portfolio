@@ -14,15 +14,15 @@
     },
     {
       "id": "project-2",
-      "description": "Metallic woven texture",
-      "imageUrl": "https://images.unsplash.com/photo-1656055448548-e26753307fc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtZXRhbCUyMHRleHR1cmV8ZW58MHx8fHwxNzYzODY4MTU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "metal texture"
-    },
-    {
-      "id": "project-3",
       "description": "A mobile-first social media app.",
       "imageUrl": "https://images.unsplash.com/photo-1514575110897-1253ff7b2ccb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzYzNzcyMzg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "mobile app"
+    },
+    {
+      "id": "project-3",
+      "description": "Metallic woven texture",
+      "imageUrl": "https://images.unsplash.com/photo-1656055448548-e26753307fc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtZXRhbCUyMHRleHR1cmV8ZW58MHx8fHwxNzYzODY4MTU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "metal texture"
     }
   ]
 }
