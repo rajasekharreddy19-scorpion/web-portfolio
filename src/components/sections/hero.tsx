@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import Image from "next/image";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function HeroSection() {
+  const profileImage = PlaceHolderImages.find(p => p.id === 'profile-pic');
+  
   return (
     <section id="hero" className="relative w-full min-h-screen flex items-center justify-center text-left overflow-hidden pt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
