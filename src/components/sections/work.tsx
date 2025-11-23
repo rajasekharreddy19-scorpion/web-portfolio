@@ -48,10 +48,6 @@ export function WorkSection() {
   const projectImages = PlaceHolderImages.filter(img => img.id.startsWith('project-'));
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
 
-  const handleProjectClick = (projectId: string) => {
-    setExpandedProject(prevId => (prevId === projectId ? null : projectId));
-  };
-
   return (
     <section id="work" className="py-24 sm:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +60,10 @@ export function WorkSection() {
           </p>
         </div>
         
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div 
+          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
+          onMouseLeave={() => setExpandedProject(null)}
+        >
           {projectsData.map((project) => {
             const image = projectImages.find(p => p.id === project.id);
             if (!image) return null;
@@ -73,7 +72,7 @@ export function WorkSection() {
             return (
               <Card 
                 key={project.id}
-                onClick={() => handleProjectClick(project.id)}
+                onMouseEnter={() => setExpandedProject(project.id)}
                 className={cn(
                   "bg-card flex flex-col overflow-hidden group border-transparent transition-all duration-500 cursor-pointer",
                   "hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-1",
