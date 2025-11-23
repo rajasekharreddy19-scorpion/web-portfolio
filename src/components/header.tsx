@@ -38,7 +38,7 @@ export function Header() {
               ))}
             </ul>
             <Button asChild>
-              <a href="/resume.pdf" download="Gangireddy-Rajasekhar-Reddy-Resume.pdf">
+              <a href="/Gangireddy-Rajasekhar-Reddy-Resume.pdf" download="Gangireddy-Rajasekhar-Reddy-Resume.pdf">
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </a>
@@ -80,7 +80,7 @@ export function Header() {
                   </nav>
                   <div className="p-4 border-t">
                     <Button asChild className="w-full">
-                       <a href="/resume.pdf" download="Gangireddy-Rajasekhar-Reddy-Resume.pdf">
+                       <a href="/Gangireddy-Rajasekhar-Reddy-Resume.pdf" download="Gangireddy-Rajasekhar-Reddy-Resume.pdf">
                          <Download className="mr-2 h-4 w-4" />
                          Download Resume
                        </a>
