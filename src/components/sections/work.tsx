@@ -58,47 +58,51 @@ export function WorkSection() {
               if (!image) return null;
               
               return (
-                <Card key={project.id} className="bg-card flex flex-col overflow-hidden group border-transparent transition-shadow hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-1">
-                  <div className="relative w-full aspect-video overflow-hidden">
-                    <Image
-                      src={image.imageUrl}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      data-ai-hint={image.imageHint}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
-                  <div className="flex flex-col flex-grow p-6">
-                    <CardHeader className="p-0 mb-3">
-                      <CardTitle className="font-headline text-xl text-foreground">{project.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="p-0 flex-grow space-y-4">
-                      <p className="text-muted-foreground">{project.description}</p>
-                       {project.technologies && (
-                        <div>
-                          <h4 className="font-headline text-md font-semibold text-primary mb-2">Technologies Used:</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {project.technologies.map(tech => (
-                              <Badge key={tech} variant="secondary">{tech}</Badge>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      <div>
-                        <h4 className="font-headline text-md font-semibold text-primary mb-2">Responsibilities:</h4>
-                        <ul className="space-y-2">
-                            {project.responsibilities?.map((item, index) => (
-                                <li key={index} className="flex items-start gap-2">
-                                    <Check className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                                    <span className="text-muted-foreground text-sm">{item}</span>
-                                </li>
-                            ))}
-                        </ul>
+                <div key={project.id} className="flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <Image
+                        src={image.imageUrl}
+                        alt={project.title}
+                        fill
+                        className="object-cover rounded-lg"
+                        data-ai-hint={image.imageHint}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-black/50 rounded-lg flex items-end p-4">
+                        <h3 className="font-headline text-2xl text-white font-bold">{project.title}</h3>
                       </div>
-                    </CardContent>
+                    </div>
+                    <div className="flip-card-back">
+                      <div className="p-6 h-full overflow-y-auto">
+                        <h3 className="font-headline text-xl text-primary-foreground font-bold mb-2">{project.title}</h3>
+                        <p className="text-sm text-primary-foreground/80 mb-4">{project.description}</p>
+                        
+                        {project.technologies && (
+                          <div className="mb-4">
+                            <h4 className="font-headline text-md font-semibold text-primary-foreground mb-2">Technologies Used:</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {project.technologies.map(tech => (
+                                <Badge key={tech} variant="default" className="bg-primary-foreground/20 text-primary-foreground">{tech}</Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        <div>
+                          <h4 className="font-headline text-md font-semibold text-primary-foreground mb-2">Responsibilities:</h4>
+                          <ul className="space-y-2">
+                              {project.responsibilities?.map((item, index) => (
+                                  <li key={index} className="flex items-start gap-2">
+                                      <Check className="h-4 w-4 text-primary-foreground/80 mt-1 flex-shrink-0" />
+                                      <span className="text-sm text-primary-foreground/80">{item}</span>
+                                  </li>
+                              ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </Card>
+                </div>
               );
             })}
           </div>
