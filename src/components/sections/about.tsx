@@ -1,7 +1,6 @@
 
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function AboutSection() {
   const skills = {
@@ -9,13 +8,6 @@ export function AboutSection() {
     "Frontend": ["Angular", "JavaScript", "HTML5", "CSS3"],
     "Tools": ["Git", "Jira"],
   };
-
-  const profileImage = PlaceHolderImages.find(p => p.id === 'profile-pic');
-  
-  if (!profileImage) {
-    // Fallback or error handling
-    return null;
-  }
 
   return (
     <section id="about" className="py-24 sm:py-32 bg-secondary/20">
@@ -27,11 +19,10 @@ export function AboutSection() {
           <div className="lg:col-span-1 flex justify-center">
             <div className="relative w-64 h-64 rounded-full overflow-hidden shadow-2xl border-4 border-primary">
               <Image
-                src={profileImage.imageUrl}
-                alt={profileImage.description}
+                src="/my-portfolio.png"
+                alt="Gangireddy Rajasekhar Reddy"
                 fill
                 className="object-cover"
-                data-ai-hint={profileImage.imageHint}
                 sizes="(max-width: 1024px) 100vw, 33vw"
               />
             </div>
