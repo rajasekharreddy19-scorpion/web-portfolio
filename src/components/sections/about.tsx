@@ -5,9 +5,9 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function AboutSection() {
   const skills = {
-    "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"],
-    "Backend": ["Node.js", "Express", "Python", "Firebase", "PostgreSQL", "MongoDB"],
-    "Design": ["Figma", "Adobe XD", "User Research", "Prototyping"],
+    "Backend": [".NET Core", "C#", "SQL Server", "RESTful APIs"],
+    "Frontend": ["Angular", "JavaScript", "HTML5", "CSS3"],
+    "Tools": ["Git", "Jira"],
   };
 
   const profileImage = PlaceHolderImages.find(p => p.id === 'profile-pic');
@@ -40,7 +40,7 @@ export function AboutSection() {
             <div>
               <h3 className="text-2xl font-headline font-semibold mb-4 text-primary">Who I Am</h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                I'm a passionate and results-oriented Full-Stack Developer with a knack for design. My journey in tech started with a fascination for how things work, which quickly evolved into a love for building elegant and efficient solutions to complex problems. I thrive in collaborative environments and am always eager to learn new technologies and improve my craft.
+                Full Stack Developer with around 2 years of experience building scalable web applications using .NET Core, Angular, and SQL. Skilled in backend, frontend, and API integrations, I enjoy debugging, collaborating with teams, and delivering clean, maintainable code. Based in Narasaraopet, I’m passionate about learning new technologies and solving real-world problems.
               </p>
             </div>
             <div>

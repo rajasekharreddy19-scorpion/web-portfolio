@@ -9,6 +9,7 @@ import React from 'react';
 export function Header() {
   const navItems = [
     { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Work', href: '#work' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -20,7 +21,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2" aria-label="Back to homepage">
             <Code className="h-8 w-8 text-primary" />
             <span className="font-headline text-xl font-bold text-foreground">
-              Web Weaver
+              Gangireddy R.
             </span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
@@ -37,7 +38,7 @@ export function Header() {
               ))}
             </ul>
             <Button asChild>
-              <a href="/resume.pdf" download="Web-Weaver-Resume.pdf">
+              <a href="/resume.pdf" download="Gangireddy-Rajasekhar-Reddy-Resume.pdf">
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </a>
@@ -57,7 +58,7 @@ export function Header() {
                      <Link href="/" className="flex items-center gap-2">
                         <Code className="h-8 w-8 text-primary" />
                         <span className="font-headline text-xl font-bold text-foreground">
-                          Web Weaver
+                          Gangireddy R.
                         </span>
                       </Link>
                   </div>
@@ -79,7 +80,7 @@ export function Header() {
                   </nav>
                   <div className="p-4 border-t">
                     <Button asChild className="w-full">
-                       <a href="/resume.pdf" download="Web-Weaver-Resume.pdf">
+                       <a href="/resume.pdf" download="Gangireddy-Rajasekhar-Reddy-Resume.pdf">
                          <Download className="mr-2 h-4 w-4" />
                          Download Resume
                        </a>

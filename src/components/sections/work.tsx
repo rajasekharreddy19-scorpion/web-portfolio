@@ -10,28 +10,20 @@ import { Button } from "@/components/ui/button";
 const projectsData = [
   {
     id: "project-1",
-    title: "E-Commerce Platform",
-    description: "A full-featured online store with a modern UI, product management, and a secure checkout process.",
-    tags: ["Next.js", "React", "Stripe", "PostgreSQL", "Tailwind CSS"],
+    title: "Manheim Canada Operating Engine",
+    description: "Developed backend services using .NET Core, C#, and SQL Server, improving performance and scalability. Built and maintained stored procedures, SQL queries, and optimized data models for auction workflows. Worked with Angular and JavaScript to enhance UI components and improve user experience. Integrated RESTful APIs for system communication and data synchronization across modules.",
+    tags: [".NET Core", "C#", "SQL Server", "Angular", "JavaScript", "Git"],
     liveUrl: "#",
     githubUrl: "#",
   },
   {
     id: "project-2",
-    title: "Data Analytics Dashboard",
-    description: "An interactive dashboard for visualizing complex datasets, featuring real-time updates and customizable reports.",
-    tags: ["React", "D3.js", "Node.js", "WebSocket", "MongoDB"],
+    title: "Result Management Application",
+    description: "Built a responsive student result management portal using Angular and ASP.NET Core. Implemented secure login, CRUD operations, and JSON-based data handling. Designed REST APIs and integrated them with the UI for dynamic data loading.",
+    tags: ["ASP.NET Core", "Angular", "JavaScript", "HTML/CSS", "SQL Server"],
     liveUrl: "#",
     githubUrl: "#",
-  },
-  {
-    id: "project-3",
-    title: "Social Media App",
-    description: "A mobile-first social networking application with features like user profiles, posts, and real-time chat.",
-    tags: ["React Native", "Firebase", "TypeScript", "GraphQL"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
+  }
 ];
 
 export function WorkSection() {
@@ -43,7 +35,7 @@ export function WorkSection() {
         <h2 className="text-3xl sm:text-4xl font-headline font-bold text-center mb-12">
           My Work
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projectsData.map((project) => {
             const image = projectImages.find(p => p.id === project.id);
             if (!image) return null;

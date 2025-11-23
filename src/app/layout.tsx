@@ -4,8 +4,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Web Weaver Portfolio',
-  description: 'Portfolio of Web Weaver, a Full-Stack Developer & Designer',
+  title: 'Gangireddy Rajasekhar Reddy - Portfolio',
+  description: 'Portfolio of Gangireddy Rajasekhar Reddy, a Full-Stack Developer',
 };
 
 export default function RootLayout({

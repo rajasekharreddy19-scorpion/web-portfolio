@@ -12,9 +12,7 @@ export function Footer() {
   }, []);
 
   const socialLinks = [
-    { name: "GitHub", href: "https://github.com", icon: Github },
-    { name: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-    { name: "Twitter", href: "https://twitter.com", icon: Twitter },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/gangireddy-rajasekhar-reddy-405a82216", icon: Linkedin },
   ];
 
   return (
@@ -22,7 +20,7 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Web Weaver. All rights reserved.
+            © {currentYear} Gangireddy Rajasekhar Reddy. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (

@@ -8,8 +8,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, Phone } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
+import Link from 'next/link';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -50,14 +51,20 @@ export function ContactSection() {
           <h2 className="text-3xl sm:text-4xl font-headline font-bold mb-4">
             Get In Touch
           </h2>
-          <p className="text-muted-foreground text-lg mb-8">
+          <p className="text-muted-foreground text-lg mb-2">
             Have a project in mind, want to collaborate, or just want to say hi?
             <br />
             Send me a message or email me at{" "}
-            <a href="mailto:hello@webweaver.dev" className="text-primary hover:underline font-medium">
-              hello@webweaver.dev
+            <a href="mailto:rajasekharreddy681@gmail.com" className="text-primary hover:underline font-medium">
+              rajasekharreddy681@gmail.com
             </a>.
           </p>
+          <div className="flex justify-center items-center gap-2 text-muted-foreground text-lg mb-8">
+            <Phone className="h-5 w-5" /> 
+            <a href="tel:+918121800854" className="text-primary hover:underline font-medium">
+              +91 8121800854
+            </a>
+          </div>
         </div>
 
         <div className="max-w-xl mx-auto">
