@@ -1,8 +1,8 @@
 
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useActionState, useEffect, useRef, useState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { submitContactForm, type ContactFormState } from '@/lib/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,7 +10,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Send, CheckCircle, Phone, Mail, Linkedin } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
-import Link from 'next/link';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -24,7 +23,7 @@ function SubmitButton() {
 
 export function ContactSection() {
   const initialState: ContactFormState = { message: '', success: false, errors: undefined };
-  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const [state, formAction] = useActionState(submitContactForm, initialState);
   const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
   const [isSuccess, setIsSuccess] = useState(false);
