@@ -13,7 +13,7 @@ const projectsData = [
   {
     id: "project-1",
     title: "Manheim Canada Operating Engine",
-    description: "Developed backend services using .NET Core, C#, and SQL Server, improving performance and scalability.",
+    description: "Developed backend services using .NET Core, C#, and SQL Server, improving performance and scalability. Built and maintained stored procedures, SQL queries, and optimized data models for auction workflows. Worked with Angular and JavaScript to enhance UI components and improve user experience. Integrated RESTful APIs for system communication and data synchronization across modules. Provided production support by debugging issues, analyzing logs, and resolving incidents quickly. Identified root causes, documented fixes, and suggested improvements for system stability. Followed Git workflows using feature branches, pull requests, and code reviews.",
     liveUrl: "#",
     githubUrl: "#",
   },
@@ -79,4 +79,3 @@ export function WorkSection() {
     </section>
   );
 }
-
