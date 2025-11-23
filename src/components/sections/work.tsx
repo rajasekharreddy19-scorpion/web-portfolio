@@ -62,7 +62,6 @@ export function WorkSection() {
         
         <div 
           className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
-          onMouseLeave={() => setExpandedProject(null)}
         >
           {projectsData.map((project) => {
             const image = projectImages.find(p => p.id === project.id);
@@ -73,6 +72,7 @@ export function WorkSection() {
               <Card 
                 key={project.id}
                 onMouseEnter={() => setExpandedProject(project.id)}
+                onMouseLeave={() => setExpandedProject(null)}
                 className={cn(
                   "bg-card flex flex-col overflow-hidden group border-transparent transition-all duration-500 cursor-pointer",
                   "hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-1",
